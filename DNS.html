@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qué es el DNS y cómo funciona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #c31f1f;
+        }
+        h1, h2 {
+            color: #c12e2e;
+        }
+        p {
+            text-align: justify;
+        }
+        img {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            background-color: #1ba248;
+            color: rgb(45, 145, 34);
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #154360;">¿Qué es el DNS?</h1>
+    <p>El <strong>Sistema de Nombres de Dominio (DNS)</strong> es un sistema que actúa como el "director de tráfico" en Internet, traduciendo los nombres de dominio legibles por humanos, como <code>www.google.com</code>, en direcciones IP numéricas, como <code>192.168.1.1</code>, que son comprendidas por las máquinas. Sin el DNS, sería muy difícil para los usuarios navegar por Internet, ya que tendrían que recordar largas cadenas de números en lugar de nombres sencillos de sitios web.</p>
+
+    <p>El DNS se creó en 1983 por Paul Mockapetris y ha sido esencial para el crecimiento y funcionamiento de Internet, permitiendo la escalabilidad de la red. Su estructura jerárquica y distribuida permite que la resolución de nombres de dominio sea eficiente y rápida.</p>
+
+    <!-- Imagen representando el concepto del DNS -->
+    <img src="DNS.JPEG" alt="Representación del DNS" width="500">
+
+    <h2 style="color: #1A5276;">¿Cómo funciona el DNS?</h2>
+    <p>El DNS funciona a través de una serie de servidores distribuidos en una jerarquía global, comenzando con los servidores raíz, pasando por los servidores de nombres de dominio de nivel superior (TLD) y, finalmente, llegando a los servidores autorizados de dominios específicos. A continuación, se detallan los pasos clave en el proceso de resolución de un nombre de dominio:</p>
+
+    <ol style="color: #2874A6;">
+        <li><strong>Solicitud DNS desde el navegador:</strong> Cuando un usuario ingresa una URL en su navegador (por ejemplo, <code>www.google.com</code>), el navegador envía una solicitud DNS para obtener la dirección IP asociada a ese dominio.</li>
+        <li><strong>Consulta al Servidor DNS Recursivo:</strong> La solicitud es enviada primero a un servidor DNS recursivo, generalmente proporcionado por el proveedor de servicios de Internet (ISP). Este servidor actúa como intermediario para encontrar la dirección IP si no la tiene en su caché.</li>
+        <li><strong>Consulta a un Servidor Raíz:</strong> Si el servidor DNS recursivo no tiene la información en su caché, consulta a uno de los 13 servidores raíz que existen a nivel mundial. Estos servidores no tienen la dirección IP exacta, pero redirigen la solicitud a un servidor de dominio de nivel superior (TLD), como el responsable de los dominios ".com", ".org", o ".net".</li>
+        <li><strong>Consulta a un Servidor de Dominio TLD:</strong> El servidor TLD redirige la solicitud al servidor autoritativo para el nombre de dominio solicitado (en este caso, "google.com").</li>
+        <li><strong>Respuesta con la Dirección IP:</strong> El servidor autoritativo responde con la dirección IP asociada al dominio, y esta respuesta es devuelta al servidor DNS recursivo, que la envía de vuelta al navegador del usuario.</li>
+        <li><strong>Conexión al servidor web:</strong> Finalmente, el navegador utiliza la dirección IP para conectarse al servidor web de Google y mostrar la página solicitada.</li>
+    </ol>
+
+    <!-- Imagen ilustrando cómo funciona el DNS -->
+    <img src="DNS2.JPEG" alt="Cómo funciona el DNS" width="500">
+
+    <h2 style="color: #1A5276;">Importancia del DNS</h2>
+    <p>El DNS es crucial para el funcionamiento de Internet. Sin él, sería casi imposible navegar por la red de manera eficiente. Gracias a su estructura distribuida y su capacidad para resolver nombres de dominio de forma rápida, el DNS permite que los usuarios accedan a los sitios web de forma sencilla. Además, los servidores DNS permiten que Internet sea escalable, soportando miles de millones de solicitudes cada día.</p>
+    <p>Además, el DNS también juega un papel importante en la seguridad. Existen tecnologías como DNSSEC (DNS Security Extensions) que aseguran la autenticidad de las respuestas DNS, evitando ataques como el envenenamiento de caché o el secuestro de dominios.</p>
+
+    <!-- Imagen representando el tráfico en la red a través del DNS -->
+    <img src="DNS1.JPEG" alt="Seguridad y tráfico DNS" width="500">
+
+    <h2 style="color: #1A5276;">Referencias en Formato APA</h2>
+    <ul style="color: #154360;">
+        <li>Comer, D. E. (2018). <em>Internetworking with TCP/IP: Principles, protocols, and architecture</em> (6th ed.). Pearson.</li>
+        <li>Droms, R. E., & Lemon, T. (2002). <em>The DHCP Handbook</em> (2nd ed.). Sams Publishing.</li>
+        <li>Mockapetris, P. V. (1987). <em>Domain names - concepts and facilities</em> (RFC 1034). Network Working Group.</li>
+        <li>Liu, C., & Albitz, P. (2006). <em>DNS and BIND</em> (5th ed.). O'Reilly Media.</li>
+    </ul>
+
+    <!-- Imagen representando un libro sobre DNS -->
+    <img src="DNS3.JPEG" alt="Libro sobre DNS" width="300">
+
+    <!-- Derechos de autor -->
+    <footer>
+        <p>&copy; 2024 Roberto Assis Ariza Malaquías. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
